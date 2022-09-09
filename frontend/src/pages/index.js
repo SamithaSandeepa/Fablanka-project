@@ -72,7 +72,7 @@ const HomePage = () => {
               <ImageSlider />
             </div>
           </div>
-          <div className="row">
+          <div className="row ">
             <p className="text-justify col-lg-12 mt-3">
               Fab Lanka is a group of highly motivated individuals coming
               together to set up fabrication labs (fab labs) throughout Sri

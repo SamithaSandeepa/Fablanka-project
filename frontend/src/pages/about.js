@@ -72,9 +72,9 @@ const About = () => {
               </div>
             </div>
           </div>
-          <div className="row">
+          <div className="row ">
             <div className="col-12">
-              <p className="text-left h4 mb-3">
+              <p className="text-left h4 mb-3 mt-3 ">
                 Towards a Makers’ society through Community Outreach
               </p>
               <p className={`card-justify ${Styles.qcont}`}>
@@ -104,7 +104,7 @@ const About = () => {
               </p>
             </div>
           </div>
-          <div className="row">
+          <div className="row m">
             <div className="col-md-12 mb-5">
               <p className="text-left h4 mt-5 mb-3">
                 Towards a Greener Economy that protects the environment

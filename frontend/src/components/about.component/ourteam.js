@@ -14,7 +14,7 @@ const OurTeam = () => {
             <div className={Styles.card_item} key={curElem.id}>
               <a className="no-underline" href={curElem.link} target="_blank" rel="noreferrer">
                 <div className={Styles.card_inner}>
-                  <img src={curElem.image} />
+                  <img src={curElem.image} alt=""/>
                   <div className={Styles.userName}>
                     <p className="text-xl mb-1">{curElem.name}</p>
                     <p className="text-slate-400">{curElem.position}</p>

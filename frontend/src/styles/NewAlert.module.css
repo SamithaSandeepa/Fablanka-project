@@ -4,6 +4,12 @@
   }
 }
 
+@media (max-width: 500px) {
+  .container {
+    height: 300px !important;
+  }
+}
+
 .a:hover {
   background-color: rgb(255, 0, 0);
 }

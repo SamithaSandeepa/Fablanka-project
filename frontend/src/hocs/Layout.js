@@ -34,7 +34,7 @@ const Layout = ({ title, content, children }) => {
       {/* <div data-aos="fade-down"> */}
       <Navbar className="sticky-sm-top" />
       {/* </div> */}
-      <div className="container-fluid px-5 mt-5">{children}</div>
+      <div className="container-fluid mt-5">{children}</div>
       <div>
         <Footer />
       </div>

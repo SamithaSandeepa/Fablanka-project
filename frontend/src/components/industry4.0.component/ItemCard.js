@@ -6,7 +6,7 @@ const ItemCard = () => {
     return(
 
         <div className="max-w-screen-xxl p-5 mx-auto dark:bg-[#ffffff] dark:text-gray-100 shadow mb-5">
-            <div className="mb-5 text-center text-[30px] text-[#243c5a] text-front-mono">Industry 4.0 Technologies</div>
+            <div className="mb-5 text-center text-[30px] text-[#243c5a] text-front-mono font-bold text-3xl">Industry 4.0 Technologies</div>
         <div className="grid grid-cols-1 gap-5 lg:grid-cols-4 sm:grid-cols-2 ">   
         { dataindustry.map((user) => {
         return(

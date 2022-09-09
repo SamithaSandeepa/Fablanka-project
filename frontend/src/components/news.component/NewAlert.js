@@ -29,7 +29,7 @@ const NewAlert = () => {
   const settings = {
     dots: false,
     infinite: false,
-    slidesToShow: 5,
+    slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
     speed: 1000,
