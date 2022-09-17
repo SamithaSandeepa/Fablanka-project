@@ -8,7 +8,8 @@
     "build": "npm run make-q && next build",
     "export": "next build && next export",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "npm ci && npm run build && npm run start:prod"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
