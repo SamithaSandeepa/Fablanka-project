@@ -40,7 +40,7 @@ const OurProjectTable = () => {
     //if status is true then set status to false
     //if status is false then set status to true
     axios
-      .patch(`http://localhost:8000/api/projectmakandura/${id}/`, {
+      .patch(`${API_URL}/api/projectmakandura/${id}/`, {
         status: status,
       })
       .then((res) => {
@@ -60,7 +60,7 @@ const OurProjectTable = () => {
       )
     ) {
       try {
-        await axios.delete(`http://localhost:8000/api/projectmakandura/${id}`);
+        await axios.delete(`${API_URL}/api/projectmakandura/${id}`);
         getProject();
       } catch (error) {
         console.log(error);

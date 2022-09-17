@@ -46,7 +46,7 @@ const EditProjectMakandura = (props) => {
       };
       // console.log(content);
       axios
-        .put(`http://localhost:8000/api/projectmakandura/${props.id}/`, projectmakandura)
+        .put(`${API_URL}/api/projectmakandura/${props.id}/`, projectmakandura)
         .then((res) => {
           console.log(res);
           window.location.href = "/admin/ourproject/all";

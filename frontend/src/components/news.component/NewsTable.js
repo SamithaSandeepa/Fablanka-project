@@ -38,7 +38,7 @@ const NewsTable = () => {
     //if status is true then set status to false
     //if status is false then set status to true
     axios
-      .patch(`http://localhost:8000/api/newspage/${id}/`, { status: status })
+      .patch(`${API_URL}/api/newspage/${id}/`, { status: status })
       .then((res) => {
         console.log(res);
         //alert for change status successfully
@@ -56,7 +56,7 @@ const NewsTable = () => {
       )
     ) {
       try {
-        await axios.delete(`http://localhost:8000/api/newspage/${id}`);
+        await axios.delete(`${API_URL}/api/newspage/${id}`);
         getNews();
       } catch (error) {
         console.log(error);
