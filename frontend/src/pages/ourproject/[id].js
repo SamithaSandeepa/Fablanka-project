@@ -18,37 +18,23 @@ const project = (props) => {
     <Layout title="FabLanka | Project" content="Dashboard page">
       <div>
         <SingleProjectMakandura
-          title={props.project?.title_project_m}
-          summery={props.project?.summery_project_m}
-          content={props.project?.content_project_m}
-          image={props.project?.image_project_m}
+          title={props.project.title_project_m}
+          summery={props.project.summery_project_m}
+          content={props.project.content_project_m}
+          image={props.project.image_project_m}
         />
       </div>
     </Layout>
   );
 };
-export async function getStaticPaths(c) {
-  // console.log(c, "sffgsgf");
-
-  return {
-    paths: [
-      {
-        params: {
-          id: "1",
-        },
-      },
-    ],
-    fallback: false,
-  };
-}
 
 //getting props data from server
-export async function getStaticProps(context) {
-  const projectID = context.params.id;
+project.getInitialProps = async (context) => {
+  const projectID = context.query.id;
   const response = await axios.get(
     `${API_URL}/api/projectmakandura/${projectID}`
   );
-  return { props: { project: response.data } };
-}
+  return { project: response.data };
+};
 
 export default project;

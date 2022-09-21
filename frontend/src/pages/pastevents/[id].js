@@ -27,26 +27,12 @@ const events = (props) => {
     </Layout>
   );
 };
-export async function getStaticPaths(c) {
-  // console.log(c, "sffgsgf");
-
-  return {
-    paths: [
-      {
-        params: {
-          id: "1",
-        },
-      },
-    ],
-    fallback: false,
-  };
-}
 
 //getting props data from server
-export async function getStaticProps(context) {
-  const eventsID = context.params.id;
+events.getInitialProps = async (context) => {
+  const eventsID = context.query.id;
   const response = await axios.get(`${API_URL}/api/pastevent/${eventsID}`);
-  return { props: { events: response.data } };
-}
+  return { events: response.data };
+};
 
 export default events;
