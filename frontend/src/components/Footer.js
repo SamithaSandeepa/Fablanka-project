@@ -51,7 +51,7 @@ const Footer = () => {
                 FabLanka
               </h6>
               <Image
-                src="http://localhost:3000/FABcube.png"
+                src="/FABcube.png"
                 width={100}
                 height={100}
                 alt="Fablanka logo"
