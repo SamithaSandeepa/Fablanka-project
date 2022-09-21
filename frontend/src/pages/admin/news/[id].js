@@ -44,12 +44,10 @@ const editnews = (props) => {
 };
 
 //return newsID from params
-editnews.getInitialProps = async (context) => {
+export async function getServerSideProps(context) {
   const newsID = context.query.id;
-  const response = await axios.get(
-    `http://localhost:3000/api/newspage/${newsID}`
-  );
-  return { news: response.data };
-};
+  const response = await axios.get(`${API_URL}/api/newspage/${newsID}`);
+  return { props: { news: response.data } };
+}
 
 export default editnews;

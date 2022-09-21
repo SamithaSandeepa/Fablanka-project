@@ -29,10 +29,10 @@ const events = (props) => {
 };
 
 //getting props data from server
-events.getInitialProps = async (context) => {
+export async function getServerSideProps(context) {
   const eventsID = context.query.id;
   const response = await axios.get(`${API_URL}/api/pastevent/${eventsID}`);
-  return { events: response.data };
-};
+  return { props: { events: response.data } };
+}
 
 export default events;

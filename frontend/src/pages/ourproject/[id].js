@@ -29,12 +29,12 @@ const project = (props) => {
 };
 
 //getting props data from server
-project.getInitialProps = async (context) => {
+export async function getServerSideProps(context){
   const projectID = context.query.id;
   const response = await axios.get(
     `${API_URL}/api/projectmakandura/${projectID}`
   );
-  return { project: response.data };
+  return {props:{ project: response.data }};
 };
 
 export default project;

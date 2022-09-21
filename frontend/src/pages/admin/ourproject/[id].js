@@ -44,13 +44,13 @@ const editprojectmakandura = (props) => {
 };
 
 //return newsID from params
-editprojectmakandura.getInitialProps = async (context) => {
+export async function getServerSideProps(context){
   const projectID = context.query.id;
   const response = await axios.get(
     `${API_URL}/api/projectmakandura/${projectID}`
   );
   console.log(response);
-  return { project: response.data };
+  return {props: { project: response.data }};
 };
 
 export default editprojectmakandura;
