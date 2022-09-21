@@ -28,8 +28,8 @@ const news = (props) => {
 };
 
 //getting props data from server
-export async function getServerSideProps(context) {
-  const newsID = context.query.id;
+export async function getServerSideProps(params) {
+  const newsID = params.query.id;
   const response = await axios.get(`${API_URL}/api/newspage/${newsID}`);
   return { props: { news: response.data } };
 }

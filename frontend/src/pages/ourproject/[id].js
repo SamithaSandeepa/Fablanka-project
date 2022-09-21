@@ -29,8 +29,8 @@ const project = (props) => {
 };
 
 //getting props data from server
-export async function getServerSideProps(context){
-  const projectID = context.query.id;
+export async function getServerSideProps(params) {
+  const projectID = params.query.id;
   const response = await axios.get(
     `${API_URL}/api/projectmakandura/${projectID}`
   );

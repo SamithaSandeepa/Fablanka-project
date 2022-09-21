@@ -44,8 +44,8 @@ const editprojectmakandura = (props) => {
 };
 
 //return newsID from params
-export async function getServerSideProps(context){
-  const projectID = context.query.id;
+export async function getServerSideProps(params){
+  const projectID = params.query.id;
   const response = await axios.get(
     `${API_URL}/api/projectmakandura/${projectID}`
   );

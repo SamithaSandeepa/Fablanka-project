@@ -44,10 +44,10 @@ const editevents = (props) => {
 };
 
 //return evetsID from params
-export async function getServerSideProps(context){
-  const evetsID = context.query.id;
+export async function getServerSideProps(params) {
+  const evetsID = params.query.id;
   const response = await axios.get(`${API_URL}/api/pastevent/${evetsID}`);
-  return {props: { events: response.data }};
-};
+  return { props: { events: response.data } };
+}
 
 export default editevents;
