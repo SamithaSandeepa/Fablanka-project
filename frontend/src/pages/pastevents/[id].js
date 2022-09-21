@@ -47,6 +47,6 @@ export async function getStaticProps(context) {
   const eventsID = context.params.id;
   const response = await axios.get(`${API_URL}/api/pastevent/${eventsID}`);
   return { props: { events: response.data } };
-};
+}
 
 export default events;

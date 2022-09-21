@@ -7,7 +7,7 @@
     "make-q": "node ./build.js",
     "build": "npm run make-q && next build",
     "build_and_export": "next build && next export",
-    "ex": "next export",
+    "export": "next export",
     "start": "next start",
     "lint": "next lint",
     "deploy": "aws s3 cp --recursive ./out s3://testfablanka.org"
