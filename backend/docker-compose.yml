@@ -4,10 +4,10 @@ services:
     image: fablanka
     build: .
     ports:
-      - "3000:3000"
+      - "8000:8000"
     extra_hosts:
       - "postgresql:192.168.1.22"
-    command: python manage.py runserver 0.0.0.0:3000
+    command: python manage.py runserver 0.0.0.0:8000
     environment:
       - POSTGRES_HOST=host.docker.internal
       - POSTGRES_USER=postgres
