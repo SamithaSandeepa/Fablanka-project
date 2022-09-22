@@ -1,9 +1,7 @@
 from django.contrib import admin
-from django.urls import path, include, re_path
+from django.urls import path, include
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView, TokenVerifyView 
 from .router import router
-
-from core.views import index
 
 urlpatterns = [
     path('api/token/', TokenObtainPairView.as_view()),
@@ -12,5 +10,4 @@ urlpatterns = [
     path('api/account/', include('account.urls')),
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-    re_path(r'^(?:.*)/?$', index, name="index"),
 ]
