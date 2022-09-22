@@ -1,7 +1,9 @@
 # Fablanka-project
+
 local test admin user: admin/password
 reset migrations:
-- delete everything under migrations except __init__.py
+
+- delete everything under migrations except **init**.py
 - python manage.py makemigrations
 - python manage.py migrate
 
@@ -18,8 +20,8 @@ venv\Scripts\activate
 deactivate
 
 docker
-docker build -t fablanka-local .
-docker run -p 3000:3000 fablanka-local
+docker build -t fablanka .
+docker run -p 3000:3000 fablanka
 docker tag fablanka 953437657370.dkr.ecr.ap-southeast-1.amazonaws.com/fablanka
 docker push 953437657370.dkr.ecr.ap-southeast-1.amazonaws.com/fablanka
 
