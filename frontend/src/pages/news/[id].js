@@ -17,39 +17,21 @@ const news = (props) => {
     <Layout title="FabLanka | News" content="Dashboard page">
       <div>
         <SingleNews
-          title={props.news?.title}
-          summery={props.news?.summery}
-          content={props.news?.content}
-          image={props.news?.image}
+          title={props.news.title}
+          summery={props.news.summery}
+          content={props.news.content}
+          image={props.news.image}
         />
       </div>
     </Layout>
   );
 };
 
-export async function getStaticPaths(c) {
-  // console.log(c, "sffgsgf");
-
-  return {
-    paths: [
-      {
-        params: {
-          id: "1",
-        },
-      },
-    ],
-    fallback: true,
-  };
-}
-
 //getting props data from server
-export async function getStaticProps(context) {
-  console.log(context);
-  const newsID = context.params.id;
+news.getInitialProps = async (context) => {
+  const newsID = context.query.id;
   const response = await axios.get(`${API_URL}/api/newspage/${newsID}`);
-  // console.log(response.data, "fgfsd");
-  // return { news: response.data };
-  return { props: { news: response.data } };
-}
+  return { news: response.data};
+};
 
 export default news;

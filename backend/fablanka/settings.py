@@ -85,9 +85,12 @@ DATABASES = {
     'default': {
         "ENGINE": "django.db.backends.postgresql",
         'NAME': 'fablanka',
-        "USER": os.environ.get("POSTGRES_USER", default="postgres"),
-        "PASSWORD": os.environ.get("POSTGRES_PASSWORD", "password"),
-        "HOST": os.environ.get("POSTGRES_HOST", default="localhost"),
+        'PASSWORD': 'Fablanka#2022',
+        'USER': 'postgres',
+        'HOST': 'fablanka.czfxoxflq1jz.ap-southeast-1.rds.amazonaws.com',
+        # "USER": os.environ.get("POSTGRES_USER", default="postgres"),
+        # "PASSWORD": os.environ.get("POSTGRES_PASSWORD", "password"),
+        # "HOST": os.environ.get("POSTGRES_HOST", default="localhost"),
         "PORT": 5432,
     }
 }
@@ -152,9 +155,11 @@ SIMPLE_JWT = {
 }
 
 CORS_ALLOW_ALL_ORIGINS = True
-CORS_ORIGIN_WHITELIST = (
-  'http://localhost:3000',
-)
+
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:3000',
+    'http://localhost:3001',
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
