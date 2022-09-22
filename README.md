@@ -18,10 +18,13 @@ venv\Scripts\activate
 deactivate
 
 docker
-docker build -t fablanka-local .
-docker run -p 3000:3000 fablanka-local
-docker tag fablanka 953437657370.dkr.ecr.ap-southeast-1.amazonaws.com/fablanka
-docker push 953437657370.dkr.ecr.ap-southeast-1.amazonaws.com/fablanka
+docker build -t fablanka .
+docker run -p 8000:8000 -d fablanka
+docker tag fablanka 953437657370.dkr.ecr.ap-southeast-1.amazonaws.com/fablanka:latest
+docker push 953437657370.dkr.ecr.ap-southeast-1.amazonaws.com/fablanka:latest
+
+build & run locally:
+    - docker-compose up
 
 aws:
 login using cli: aws --region ap-southeast-1 ecr get-login-password | docker login --username AWS --password-stdin 953437657370.dkr.ecr.ap-southeast-1.amazonaws.com
