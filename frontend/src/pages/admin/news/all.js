@@ -1,11 +1,18 @@
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import Layout from "../../../hocs/Layout";
-import NewsTable from "../../../components/news.component/NewsTable";
+import dynamic from "next/dynamic";
+
+const NewsTable = dynamic(
+  () => import("../../../components/news.component/NewsTable"),
+  {
+    ssr: false,
+  }
+);
 
 const AllNews = () => {
   const router = useRouter();
-  console.log(router.pathname);
+  // console.log(router.pathname);
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   const user = useSelector((state) => state.auth.user);
   const loading = useSelector((state) => state.auth.loading);

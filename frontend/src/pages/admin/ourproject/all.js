@@ -1,11 +1,18 @@
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
+import dynamic from "next/dynamic";
 import Layout from "../../../hocs/Layout";
-import OurProjectTable from "../../../components/makandura.component/OurProjectTable";
+
+const OurProjectTable = dynamic(
+  () => import("../../../components/makandura.component/OurProjectTable"),
+  {
+    ssr: false,
+  }
+);
 
 const AllNews = () => {
   const router = useRouter();
-  console.log(router.pathname);
+  // console.log(router.pathname);
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   const user = useSelector((state) => state.auth.user);
   const loading = useSelector((state) => state.auth.loading);
