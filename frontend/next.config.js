@@ -10,7 +10,7 @@ module.exports = {
   //   config.optimization.minimize = true;
   //   return config;
   // },
-  env: {
-    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
-  },
+  // env: {
+  //   NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
+  // },
 };
