@@ -46,9 +46,7 @@ const editnews = (props) => {
 //return newsID from params
 editnews.getInitialProps = async (context) => {
   const newsID = context.query.id;
-  const response = await axios.get(
-    `http://localhost:3000/api/newspage/${newsID}`
-  );
+  const response = await axios.get(`${API_URL}/api/newspage/${newsID}`);
   return { news: response.data };
 };
 

@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 8001",
     "make-q": "node ./build.js",
     "build": "next build",
     "build_and_export": "next build && next export",
     "export": "next export",
-    "start": "next start",
+    "start": "next start -p 5000",
     "lint": "next lint",
     "deploy": "aws s3 cp --recursive ./out s3://testfablanka.org"
   },
