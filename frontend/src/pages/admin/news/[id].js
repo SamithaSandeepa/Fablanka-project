@@ -15,6 +15,7 @@ const EditNews = dynamic(
 );
 
 const editnews = (props) => {
+  
   // console.log(props.news);
   // const router = useRouter();
 

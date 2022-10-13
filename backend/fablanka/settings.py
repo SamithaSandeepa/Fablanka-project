@@ -85,10 +85,13 @@ DATABASES = {
     'default': {
         "ENGINE": "django.db.backends.postgresql",
         'NAME': 'fablanka',
-        "USER": os.environ.get("POSTGRES_USER", default="postgres"),
-        "PASSWORD": os.environ.get("POSTGRES_PASSWORD", "password"),
-        "HOST": os.environ.get("POSTGRES_HOST", default="localhost"),
-        "PORT": 5432,
+        # "USER": os.environ.get("POSTGRES_USER", default="postgres"),
+        # "PASSWORD": os.environ.get("POSTGRES_PASSWORD", "password"),
+        # "HOST": os.environ.get("POSTGRES_HOST", default="localhost"),
+        'PASSWORD': 'root',
+        'USER': 'postgres',
+        'Host': 'localhost',
+        # "PORT": 5432,
     }
 }
 
